@@ -32,6 +32,7 @@ public class Stove {
 	public void displayStove() {
 		boolean danger = false;
 		for (int i=0; i < NUM_BURNERS; i++) {
+			burners.get(i).display();
 			if (burners.get(i).getTemperature() == Burner.Temperature.BLAZING ) {  //
 				danger = true;
 			}

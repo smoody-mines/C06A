@@ -93,6 +93,6 @@ public class Burner {
     }
     	
         public void display() {
-            System.out.println("Burner setting: " + mySetting + " | Temperature: " + myTemperature);
+            System.out.println("[" + mySetting + "]....." + myTemperature);
         }
     }
