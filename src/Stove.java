@@ -27,10 +27,18 @@ public class Stove {
 	/**
 	 * Display the current stove status
 	 *  
-	 **** You must write the following method ****
+	 **** You must write the following   method ****
 	 */
 	public void displayStove() {
-
+		boolean danger = false;
+		for (int i=0; i < NUM_BURNERS; i++) {
+			if (burners.get(i).getTemperature() == Burner.Temperature.BLAZING ) {  //
+				danger = true;
+			}
+		}
+		if (danger) {
+			System.out.println("RED LIGHT - HOT BURNER ALERT");
+		}
 	}
 	
 	/**
