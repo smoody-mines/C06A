@@ -1,5 +1,22 @@
 public class Burner {
-	public enum Temperature{BLAZING, HOT, WARM, COLD}
+	
+	public enum Temperature{
+		BLAZING("VERY HOT! DON'T TOUCH"), HOT("CAREFUL"), WARM("warm"), COLD("cooool");
+		private final String display;
+
+	    Temperature(String display) {
+	        this.display = display;
+	    }
+
+	    // Override toString() method to return the string representation
+	    @Override
+	    public String toString() {
+	        return display;
+	    }
+		
+	}
+	
+	
 	private int timer; //private??
 	private Setting mySetting;
 	public static final int TIME_DURATION = 2;
