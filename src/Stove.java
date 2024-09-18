@@ -32,6 +32,7 @@ public class Stove {
 	public void displayStove() {
 		boolean danger = false;
 		for (int i=0; i < NUM_BURNERS; i++) {
+			burners.get(i).display();
 			if (burners.get(i).getTemperature() == Burner.Temperature.BLAZING ) {  //
 				danger = true;
 			}
@@ -100,27 +101,28 @@ public class Stove {
 		Stove stove = new Stove();
 		
 		System.out.println("Beginning stove state ");
-		// trun the burners up
 		stove.displayStove();
+		
+		// trun the burners up
+		
 		stove.turnBurnersUp();
 		stove.timePassing(6);
 		System.out.println("\nStove after burners turned up ");
+		stove.displayStove();
 		
 		// adjust the burners
-		stove.displayStove();
 		stove.adjustBurners();
-		stove.timePassing(2);
+		stove.timePassing(3);
 		System.out.println("\nStove after burners adjusted ");
+		stove.displayStove();
 		
 		// some more adjustment test
-		stove.displayStove();
 		stove.moreBurnerAdjustments();
 		stove.timePassing(1);
-		
-		// Ensure temperatures don't update till time has passed
 		System.out.println("\nStove waiting for time to elapse ");
 		stove.displayStove();
-		stove.timePassing(1);
+		// Ensure temperatures don't update till time has passed
+		stove.timePassing(2);
 		System.out.println("\nStove in final state ");
 		stove.displayStove();	
 	}
